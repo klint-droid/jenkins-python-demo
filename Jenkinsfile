@@ -9,7 +9,7 @@ pipeline {
         }
         stage('run tests') {
             steps {
-                bat '"C:\\Users\\staff\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pytest'
+                bat '"C:\\Users\\staff\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pytest test_app.py'
             }
         }
         stage('run app') {
