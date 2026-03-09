@@ -1,9 +1,5 @@
-print("Hello from Jenkins!")
+def add(a, b):
+    return a + b
 
-name = "Klint"
-print("Welcome", name)
-
-a = 5
-b = 10
-
-print("Sum:", a + b)
+if __name__ == "__main__":
+    print(add(5, 3))

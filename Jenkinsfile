@@ -2,16 +2,24 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repository') {
+
+        stage('Install Dependencies') {
             steps {
-                echo 'Cloning repository...'
+                bat '"C:\\Users\\staff\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pip install -r requirements.txt'
             }
         }
-        stage('Run Python Script') {
+
+        stage('Run App') {
             steps {
-                echo 'Running Python script...'
-                sh 'python app.py'
+                bat '"C:\\Users\\staff\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" app.py'
             }
         }
+
+        stage('Run Tests') {
+            steps {
+                bat '"C:\\Users\\staff\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pytest'
+            }
+        }
+
     }
 }
