@@ -2,24 +2,20 @@ pipeline {
     agent any
 
     stages {
-
-        stage('Install Dependencies') {
+        stage('install dependencies') {
             steps {
                 bat '"C:\\Users\\staff\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pip install -r requirements.txt'
             }
         }
-
-        stage('Run App') {
-            steps {
-                bat '"C:\\Users\\staff\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" app.py'
-            }
-        }
-
-        stage('Run Tests') {
+        stage('run tests') {
             steps {
                 bat '"C:\\Users\\staff\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pytest'
             }
         }
-
+        stage('run app') {
+            steps {
+                bat '"C:\\Users\\staff\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" app.py'
+            }
+        }
     }
 }
