@@ -1,12 +1,10 @@
-from flask import Flask, request
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route("/add")
-def add():
-    a = int(request.args.get("a"))
-    b = int(request.args.get("b"))
-    return str(a + b)
+@app.route("/")
+def home():
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(port=5000)

@@ -1,6 +1,6 @@
 from app import app
 
-def test_add():
+def test_home():
     client = app.test_client()
-    response = client.get("/add?a=2&b=6")
-    assert response.data == b"8"
+    response = client.get("/")
+    assert response.status_code == 200
